@@ -13,11 +13,16 @@ jobs:
     name: Build application in production mode
     runs-on: ubuntu-18.04
     steps:
-      - name: Build
-        run: |
-          yarn install
-          yarn run build:prod
-          yarn test
+      - uses: actions/checkout@v1
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: build:prod
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: test
       - name: Publish
         if: github.event == 'push'
         run: |
