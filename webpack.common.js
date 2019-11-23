@@ -12,7 +12,10 @@ if (process.env.NODE_ENV === 'test') {
 
 module.exports = () => {
     return {
-        entry: path.resolve(__dirname, 'src', 'app.js'),
+        entry: [
+            '@babel/polyfill',
+            path.resolve(__dirname, 'src', 'app.js')
+        ],
         module: {
             rules: [{
                 test: /\.js$/,
