@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: 
+      - master
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  build-prod:
+    name: Build application in production mode
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Build
+        run: |
+          yarn install
+          yarn run build:prod
+          yarn test
+      - name: Publish
+        if: github.event == 'push'
+        run: |
+          git remote add heroku git@github.com:fabasoad/expensify-app.git
+          git push heroku master     
