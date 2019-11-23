@@ -8,3 +8,61 @@ Expensify app that is developed in scope of Udemy [The Complete React Developer 
 4. Jest 24.9
 5. Babel 7.6.4
 6. Firebase 7.4.0
+7. SCSS 8.0.0
+## How to test and run app locally
+```bash
+git clone git@github.com:fabasoad/expensify-app.git
+cd expensify-app
+yarn install
+yarn test
+yarn run dev-server
+```
+Go to http://localhost:8080/ and be sure that app is running.
+## How to connect to the Firebase
+1. Create 2 new applications in Firebase (test and development).
+2. Turn on Google Authentication in each project.
+3. Create a Realtime-Database with the following rules in each project:
+```javascript
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "users": {
+      "$user_id": {
+        ".read": "$user_id === auth.uid",
+        ".write": "$user_id === auth.uid",
+        /* Insert project specific fields validations here */
+        "$other": {
+          ".validate": false
+        }
+      }
+    }
+  }
+}
+```
+4. Create 2 files in a root of a project with the following names:
+    1. `.env.test` - contains database settings for automation tests purposes.
+    2. `.env.development` - contains database settings for development purposes.
+
+Example of `.env.*` file:
+```bash
+FIREBASE_API_KEY="some-key"
+FIREBASE_AUTH_DOMAIN="project-id.firebaseapp.com"
+FIREBASE_DATABASE_URL="https://project-id.firebaseio.com"
+FIREBASE_PROJECT_ID="project-id"
+FIREBASE_STORAGE_BUCKET="project-id.appspot.com"
+FIREBASE_MESSAGING_SENDER_ID="1234567890"
+FIREBASE_APP_ID="app-id"
+FIREBASE_MEASUREMENT_ID="some-id"
+```
+## How to deploy to Heroku
+1. Install Heroku CLI.
+2. Run the following commands:
+```bash
+git clone git@github.com:fabasoad/expensify-app.git
+cd expensify-app
+heroku login
+git remote add heroku https://git.heroku.com/fabasoad-expensify.git
+git push heroku master
+```
+3. Go to https://fabasoad-expensify.herokuapp.com/ and be sure that up-to-date version of an app is deployed.
