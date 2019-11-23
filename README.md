@@ -1,5 +1,5 @@
 # Expensify app
-![](https://github.com/fabasoad/expensify-app/workflows/CI/badge.svg)[![Total alerts](https://img.shields.io/lgtm/alerts/g/fabasoad/expensify-app.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/fabasoad/expensify-app/alerts/)[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/fabasoad/expensify-app.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/fabasoad/expensify-app/context:javascript)
+![](https://github.com/fabasoad/expensify-app/workflows/CI/badge.svg) [![Total alerts](https://img.shields.io/lgtm/alerts/g/fabasoad/expensify-app.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/fabasoad/expensify-app/alerts/) [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/fabasoad/expensify-app.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/fabasoad/expensify-app/context:javascript)
 ## Description
 Expensify app that is developed in scope of Udemy [The Complete React Developer Course (w/ Hooks and Redux)](https://www.udemy.com/course/react-2nd-edition/) course.
 ## Technologies
