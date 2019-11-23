@@ -1,4 +1,5 @@
 # Expensify app
+![](https://github.com/fabasoad/expensify-app/workflows/CI/badge.svg)
 ## Description
 Expensify app that is developed in scope of Udemy [The Complete React Developer Course (w/ Hooks and Redux)](https://www.udemy.com/course/react-2nd-edition/) course.
 ## Technologies
