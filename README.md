@@ -45,7 +45,7 @@ Go to http://localhost:8080/ and be sure that app is running.
     1. `.env.test` - contains database settings for automation tests purposes.
     2. `.env.development` - contains database settings for development purposes.
 
-Example of `.env.*` file:
+Example of `.env.*` file: 
 ```bash
 FIREBASE_API_KEY="some-key"
 FIREBASE_AUTH_DOMAIN="project-id.firebaseapp.com"
