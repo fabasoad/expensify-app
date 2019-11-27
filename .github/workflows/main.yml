@@ -9,22 +9,18 @@ on:
       - develop
 
 jobs:
-  build-prod:
-    name: Build and test
+  coverage:
+    needs: [ test ]
     runs-on: ubuntu-18.04
     steps:
-      - name: Checkout source code
-        uses: actions/checkout@v1
-      - name: Install dependencies
-        uses: borales/actions-yarn@v2.0.0
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
         with:
-          cmd: install
-      - name: Build in production mode
-        uses: borales/actions-yarn@v2.0.0
-        with:
-          cmd: build:prod
-      - name: Test & publish code coverage
-        uses: paambaati/codeclimate-action@v2.3.0
+          node-version: '12'
+      - run: npm install -g yarn
+      - run: yarn install
+      - run: yarn build:prod
+      - uses: paambaati/codeclimate-action@v2.3.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
           FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
@@ -36,5 +32,5 @@ jobs:
           FIREBASE_APP_ID: ${{ secrets.FIREBASE_APP_ID }}
           FIREBASE_MEASUREMENT_ID: ${{ secrets.FIREBASE_MEASUREMENT_ID }}
         with:
-          coverageCommand: yarn run coverage
+          coverageCommand: yarn coverage
           debug: true
