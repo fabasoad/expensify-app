@@ -22,11 +22,11 @@ jobs:
           cmd: build:prod
       - name: Tests
         run: |
-        - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-        - chmod +x ./cc-test-reporter
-        - ./cc-test-reporter before-build
-        - yarn test
-        - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+          curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+          chmod +x ./cc-test-reporter
+          ./cc-test-reporter before-build
+          yarn test
+          ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
           FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
