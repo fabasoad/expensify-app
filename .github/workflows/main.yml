@@ -13,11 +13,14 @@ jobs:
     name: Build and test
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v1
-      - uses: borales/actions-yarn@v2.0.0
+      - name: Checkout source code
+        uses: actions/checkout@v1
+      - name: Install dependencies
+        uses: borales/actions-yarn@v2.0.0
         with:
           cmd: install
-      - uses: borales/actions-yarn@v2.0.0
+      - name: Build in production mode
+        uses: borales/actions-yarn@v2.0.0
         with:
           cmd: build:prod
       - name: Test & publish code coverage
@@ -33,5 +36,5 @@ jobs:
           FIREBASE_APP_ID: ${{ secrets.FIREBASE_APP_ID }}
           FIREBASE_MEASUREMENT_ID: ${{ secrets.FIREBASE_MEASUREMENT_ID }}
         with:
-          coverageCommand: yarn run coverage
+          coverageCommand: npm run coverage
           debug: true
