@@ -4,5 +4,12 @@
     ],
     "snapshotSerializers": [
         "enzyme-to-json/serializer"
+    ],
+    "moduleFileExtensions": [
+        "ts",
+        "tsx",
+        "js",
+        "jsx",
+        "json"
     ]
 }

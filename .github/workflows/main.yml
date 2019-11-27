@@ -36,5 +36,5 @@ jobs:
           FIREBASE_APP_ID: ${{ secrets.FIREBASE_APP_ID }}
           FIREBASE_MEASUREMENT_ID: ${{ secrets.FIREBASE_MEASUREMENT_ID }}
         with:
-          coverageCommand: npm run coverage
+          coverageCommand: yarn run coverage
           debug: true
