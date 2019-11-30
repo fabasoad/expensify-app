@@ -1,8 +1,11 @@
 # Expensify app
-![](https://github.com/fabasoad/expensify-app/workflows/CI/badge.svg) [![Total alerts](https://img.shields.io/lgtm/alerts/g/fabasoad/expensify-app.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/fabasoad/expensify-app/alerts/) [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/fabasoad/expensify-app.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/fabasoad/expensify-app/context:javascript) [![Maintainability](https://api.codeclimate.com/v1/badges/f383919b86a2fde12017/maintainability)](https://codeclimate.com/github/fabasoad/expensify-app/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage)](https://codeclimate.com/github/codeclimate/codeclimate/test_coverage)
+![](https://github.com/fabasoad/expensify-app/workflows/CI/badge.svg) ![Website](https://img.shields.io/website?down_color=lightgrey&down_message=offline&up_message=online&url=https%3A%2F%2Ffabasoad-expensify.herokuapp.com%2F) ![W3C Validation](https://img.shields.io/w3c-validation/html?targetUrl=https%3A%2F%2Ffabasoad-expensify.herokuapp.com%2F)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/fabasoad/expensify-app.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/fabasoad/expensify-app/alerts/) [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/fabasoad/expensify-app.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/fabasoad/expensify-app/context:javascript) [![Maintainability](https://api.codeclimate.com/v1/badges/f383919b86a2fde12017/maintainability)](https://codeclimate.com/github/fabasoad/expensify-app/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage)](https://codeclimate.com/github/codeclimate/codeclimate/test_coverage)
+![Code Climate issues](https://img.shields.io/codeclimate/issues/fabasoad/expensify-app) ![Code Climate technical debt](https://img.shields.io/codeclimate/tech-debt/fabasoad/expensify-app) ![GitHub repo size](https://img.shields.io/github/repo-size/fabasoad/expensify-app)
 ## Description
 Expensify app that is developed in scope of Udemy [The Complete React Developer Course (w/ Hooks and Redux)](https://www.udemy.com/course/react-2nd-edition/) course.
 ## Technologies
+
 1. React 16.11.0
 2. Redux 4.0.4
 3. Webpack 4.41.2
