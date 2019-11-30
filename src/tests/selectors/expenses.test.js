@@ -56,3 +56,14 @@ test('should sort by amount', () => {
     const result = selectExpenses(expenses, filters);
     expect(result).toEqual([ expenses[1], expenses[2], expenses[0] ]);
 });
+
+test('should not sort in case of invalid sortBy value', () => {
+    const filters = {
+        text: '',
+        sortBy: 'abc123',
+        startDate: undefined,
+        endDate: undefined
+    };
+    const result = selectExpenses(expenses, filters);
+    expect(result).toEqual([ expenses[0], expenses[1], expenses[2] ]);
+});

@@ -16,3 +16,12 @@ test('should clear uid for logout', () => {
     const state = authReducer({ uid: 'anything' }, action);
     expect(state).toEqual({});
 });
+
+test('should return the same state in case of invalid action type', () => {
+    const action = {
+        type: 'abc123'
+    };
+    const expectedState = { uid: 'anything' };
+    const actualState = authReducer(expectedState, action);
+    expect(expectedState).toEqual(actualState);
+});
