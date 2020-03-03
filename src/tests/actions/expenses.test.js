@@ -10,7 +10,7 @@ import {
     startRemoveExpense,
     startSetExpenses
 } from '../../actions/expenses';
-import uuid from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 import expenses from '../fixtures/expenses';
 import database from '../../firebase/firebase';
 
@@ -27,7 +27,7 @@ beforeEach((done) => {
 });
 
 test('should setup remove expense action object', () => {
-    const id = uuid();
+    const id = uuidv4();
     const action = removeExpense({ id });
     expect(action).toEqual({
         type: 'REMOVE_EXPENSE',
@@ -52,7 +52,7 @@ test('should remove expense from firebase', (done) => {
 });
 
 test('should setup edit expense action object', () => {
-    const id = uuid();
+    const id = uuidv4();
     const action = editExpense(id, { note: 'Some note' });
     expect(action).toEqual({
         type: 'EDIT_EXPENSE',
