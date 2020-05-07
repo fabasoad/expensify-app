@@ -1,4 +1,4 @@
-const firebase = require.requireActual('firebase');
+const firebase = jest.requireActual('firebase');
 
 export const analytics = () => {};
 
