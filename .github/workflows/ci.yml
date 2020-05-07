@@ -11,16 +11,19 @@ on:
 
 jobs:
   coverage:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@master
+      - uses: actions/checkout@v2.1.0
+      - uses: actions/setup-node@v1.4.2
         with:
-          node-version: '12'
+          node-version: '13'
       - run: npm install -g yarn
       - run: yarn install
       - run: yarn build:prod
-      - uses: paambaati/codeclimate-action@v2.3.0
+      - run: yarn test
+        if: github.ref == 'refs/heads/develop'
+      - uses: paambaati/codeclimate-action@v2.6.0
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
           FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
