@@ -1,5 +1,5 @@
 import { login, logout, startLogin, startLogout } from '../../actions/auth';
-import * as firebase from 'firebase';
+import firebase from 'firebase';
 
 let signInWithPopupSpy, signOutSpy;
 
