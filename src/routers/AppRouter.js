@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import ExpenseDashboardPage from '../components/ExpenseDashboardPage';
 import AddExpensePage from '../components/AddExpensePage';
@@ -12,7 +12,7 @@ import PublicRoute from './PublicRoute';
 export const history = createBrowserHistory();
 
 const AppRouter = () => (
-    <Router history={history}>
+    <BrowserRouter history={history}>
         <div>
             <Switch>
                 <PublicRoute path="/" component={LoginPage} exact={true} />
@@ -22,7 +22,7 @@ const AppRouter = () => (
                 <Route component={NotFoundPage} />
             </Switch>
         </div>
-    </Router>
+    </BrowserRouter>
 );
 
 export default AppRouter;

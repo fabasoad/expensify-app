@@ -4,10 +4,10 @@ const app = express();
 const publicPath = path.join(__dirname, '..', 'public');
 const port = process.env.PORT || 3000;
 
-var RateLimit = require('express-rate-limit');
-var limiter = new RateLimit({
+const RateLimit = require('express-rate-limit');
+const limiter = new RateLimit({
     windowMs: 1 * 60 * 1000, // 1 minute
-    max: 5
+    max: 7
 });
 app.use(limiter);
 app.use(express.static(publicPath));
@@ -17,5 +17,5 @@ app.get('*', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log('Server is up');
+    console.log(`Server is up on port ${port}`);
 });
