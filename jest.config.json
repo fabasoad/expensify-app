@@ -1,11 +1,22 @@
 {
-    "setupFiles": [
-        "<rootDir>/src/tests/setupTests.js"
-    ],
-    "snapshotSerializers": [
-        "enzyme-to-json/serializer"
-    ],
-    "testPathIgnorePatterns" : [
-        "<rootDir>/src/tests/fixtures/" 
-    ]
+  "coverageReporters": [
+    "lcov", "text", "text-summary"
+  ],
+  "coverageThreshold": {
+    "global": {
+      "branches": 90,
+      "functions": 77.32,
+      "lines": 90.45,
+      "statements": 88.89
+    }
+  },
+  "setupFiles": [
+    "<rootDir>/src/tests/setupTests.js"
+  ],
+  "snapshotSerializers": [
+    "enzyme-to-json/serializer"
+  ],
+  "testPathIgnorePatterns" : [
+    "<rootDir>/src/tests/fixtures/" 
+  ]
 }
