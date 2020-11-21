@@ -26,24 +26,24 @@ Go to http://localhost:8080/ and be sure that app is running.
 ```javascript
 {
   "rules": {
-    ".read": false,
-    ".write": false,
-    "users": {
-      "$user_id": {
-        ".read": "$user_id === auth.uid",
-        ".write": "$user_id === auth.uid",
-        /* Insert project specific fields validations here */
-        "$other": {
-          ".validate": false
-        }
-      }
+  ".read": false,
+  ".write": false,
+  "users": {
+    "$user_id": {
+    ".read": "$user_id === auth.uid",
+    ".write": "$user_id === auth.uid",
+    /* Insert project specific fields validations here */
+    "$other": {
+      ".validate": false
     }
+    }
+  }
   }
 }
 ```
 4. Create 2 files in a root of a project with the following names:
-    1. `.env.test` - contains database settings for automation tests purposes.
-    2. `.env.development` - contains database settings for development purposes.
+  1. `.env.test` - contains database settings for automation tests purposes.
+  2. `.env.development` - contains database settings for development purposes.
 
 Example of `.env.*` file: 
 ```bash

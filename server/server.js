@@ -6,16 +6,16 @@ const port = process.env.PORT || 3000;
 
 const RateLimit = require('express-rate-limit');
 const limiter = new RateLimit({
-    windowMs: 1 * 60 * 1000, // 1 minute
-    max: 7
+  windowMs: 1 * 60 * 1000, // 1 minute
+  max: 7
 });
 app.use(limiter);
 app.use(express.static(publicPath));
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(publicPath, 'index.html'));
+  res.sendFile(path.join(publicPath, 'index.html'));
 });
 
 app.listen(port, () => {
-    console.log(`Server is up on port ${port}`);
+  console.log(`Server is up on port ${port}`);
 });
