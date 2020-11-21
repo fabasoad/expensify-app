@@ -9,34 +9,34 @@ on:
 
 jobs:
   coverage:
-  runs-on: ubuntu-latest
-  env:
-    FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
-    FIREBASE_AUTH_DOMAIN: ${{ secrets.FIREBASE_AUTH_DOMAIN }}
-    FIREBASE_DATABASE_URL: ${{ secrets.FIREBASE_DATABASE_URL }}
-    FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
-    FIREBASE_STORAGE_BUCKET: ${{ secrets.FIREBASE_STORAGE_BUCKET }}
-    FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.FIREBASE_MESSAGING_SENDER_ID }}
-    FIREBASE_APP_ID: ${{ secrets.FIREBASE_APP_ID }}
-    FIREBASE_MEASUREMENT_ID: ${{ secrets.FIREBASE_MEASUREMENT_ID }}
-  steps:
-    - uses: actions/checkout@v2.3.3
-    - name: Install node
-      uses: actions/setup-node@v1.4.4
-      with:
-        node-version: '14'
-    - name: Compile
-      run: yarn install
-    - name: Snyk authenticate
-      run: yarn run security:auth ${{ secrets.SNYK_API_TOKEN }}
-    - name: Unit tests
-      run: yarn run test
-      if: startsWith(github.ref, 'refs/heads/bugfix/') || startsWith(github.ref, 'refs/heads/feature/')
-    - name: Unit tests with coverage
-      uses: paambaati/codeclimate-action@v2.7.4
-      if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-      env:
-        CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-      with:
-        coverageCommand: yarn run coverage
-        debug: true
+    runs-on: ubuntu-latest
+    env:
+      FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
+      FIREBASE_AUTH_DOMAIN: ${{ secrets.FIREBASE_AUTH_DOMAIN }}
+      FIREBASE_DATABASE_URL: ${{ secrets.FIREBASE_DATABASE_URL }}
+      FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
+      FIREBASE_STORAGE_BUCKET: ${{ secrets.FIREBASE_STORAGE_BUCKET }}
+      FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.FIREBASE_MESSAGING_SENDER_ID }}
+      FIREBASE_APP_ID: ${{ secrets.FIREBASE_APP_ID }}
+      FIREBASE_MEASUREMENT_ID: ${{ secrets.FIREBASE_MEASUREMENT_ID }}
+    steps:
+      - uses: actions/checkout@v2.3.3
+      - name: Install node
+        uses: actions/setup-node@v1.4.4
+        with:
+          node-version: '14'
+      - name: Compile
+        run: yarn install
+      - name: Snyk authenticate
+        run: yarn run security:auth ${{ secrets.SNYK_API_TOKEN }}
+      - name: Unit tests
+        run: yarn run test
+        if: startsWith(github.ref, 'refs/heads/bugfix/') || startsWith(github.ref, 'refs/heads/feature/')
+      - name: Unit tests with coverage
+        uses: paambaati/codeclimate-action@v2.7.4
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+        with:
+          coverageCommand: yarn run coverage
+          debug: true
