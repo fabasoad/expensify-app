@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-      - master
+      - develop
       - 'bugfix/**'
       - 'feature/**'
 
@@ -34,7 +34,7 @@ jobs:
         if: startsWith(github.ref, 'refs/heads/bugfix/') || startsWith(github.ref, 'refs/heads/feature/')
       - name: Unit tests with coverage
         uses: paambaati/codeclimate-action@v2.7.4
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
