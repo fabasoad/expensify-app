@@ -9,7 +9,7 @@
     "build:prod": "webpack --config webpack.prod.js",
     "security:auth": "snyk auth",
     "security:test": "snyk test",
-    "test": "yarn run security:test && cross-env NODE_ENV=test jest --config=jest.config.json",
+    "test": "cross-env NODE_ENV=test jest --config=jest.config.json",
     "start": "node server/server.js",
     "start:dev": "webpack serve --config webpack.dev.js",
     "heroku-postbuild": "yarn run build:prod",
