@@ -1,3 +1,4 @@
+---
 name: CI
 
 on:
@@ -29,10 +30,10 @@ jobs:
           yarn run security:auth ${{ secrets.SNYK_API_TOKEN }}
           yarn run security:test
       - name: Unit tests
-        run: yarn run test
-        if: startsWith(github.ref, 'refs/heads/bugfix/') || startsWith(github.ref, 'refs/heads/feature/')
+        run: yarn test
+        if: github.event_name == 'push' && github.ref != 'refs/heads/develop'
       - name: Unit tests with coverage
-        uses: paambaati/codeclimate-action@v2.7.4
+        uses: paambaati/codeclimate-action@v2.7.5
         if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
