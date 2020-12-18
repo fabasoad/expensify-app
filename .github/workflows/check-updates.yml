@@ -39,7 +39,7 @@ jobs:
         uses: peter-evans/create-pull-request@v3.5.2
         with:
           author: ${{ github.actor }} <${{ github.actor }}@gmail.com>
-          base: main
+          base: develop
           body: |
             ## Description
             Bump dependencies
