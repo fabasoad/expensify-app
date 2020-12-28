@@ -1,1 +1,1 @@
-export const v4 = () => "mocked-uuid";
+export const v4 = () => 'mocked-uuid';

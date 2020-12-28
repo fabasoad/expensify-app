@@ -7,7 +7,7 @@ test('should return 0 if no expenses', () => {
 });
 
 test('should correctly add up a single expense', () => {
-  const res = selectExpensesTotal([ expenses[0] ]);
+  const res = selectExpensesTotal([expenses[0]]);
   expect(res).toBe(195);
 });
 

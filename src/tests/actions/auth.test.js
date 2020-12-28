@@ -1,7 +1,7 @@
 import firebase from 'firebase';
 import { login, logout, startLogin, startLogout } from '../../actions/auth';
 
-let signInWithPopupSpy, signOutSpy;
+let signInWithPopupSpy; let signOutSpy;
 
 beforeEach(() => {
   signInWithPopupSpy = jest.fn();
