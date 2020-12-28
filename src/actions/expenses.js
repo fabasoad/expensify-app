@@ -50,9 +50,10 @@ export const editExpense = (id, updates) => ({
 export const startEditExpense = (id, updates) => {
   return (dispatch, getState) => {
     const uid = getState().auth.uid;
-    return database.ref(`users/${uid}/expenses/${id}`).update(updates).then(() => {
-      dispatch(editExpense(id, updates));
-    });
+    return database.ref(`users/${uid}/expenses/${id}`).update(updates)
+      .then(() => {
+        dispatch(editExpense(id, updates));
+      });
   }
 };
 
@@ -65,15 +66,16 @@ export const setExpenses = (expenses) => ({
 export const startSetExpenses = () => {
   return (dispatch, getState) => {
     const uid = getState().auth.uid;
-    return database.ref(`users/${uid}/expenses`).once('value').then((snapshot) => {
-      const expenses = [];
-      snapshot.forEach((childSnapshot) => {
-        expenses.push({
-          id: childSnapshot.key,
-          ...childSnapshot.val()
+    return database.ref(`users/${uid}/expenses`).once('value')
+      .then((snapshot) => {
+        const expenses = [];
+        snapshot.forEach((childSnapshot) => {
+          expenses.push({
+            id: childSnapshot.key,
+            ...childSnapshot.val()
+          });
         });
+        dispatch(setExpenses(expenses));
       });
-      dispatch(setExpenses(expenses));
-    });
   };
 };
