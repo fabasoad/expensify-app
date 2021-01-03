@@ -7,15 +7,18 @@
   "scripts": {
     "build:dev": "webpack --config webpack.dev.js",
     "build:prod": "webpack --config webpack.prod.js",
-    "lint": "eslint src",
+    "heroku-postbuild": "yarn run build:prod",
+    "lint:md": "markdownlint --config .markdownlint.yml '**/*.md'",
+    "lint:js": "eslint src",
+    "lint": "yarn run lint:md && yarn run lint:js",
+    "postinstall": "yarn husky install",
+    "prepare": "yarn run snyk-protect",
     "security:auth": "snyk auth",
     "security:test": "snyk test",
-    "test": "cross-env NODE_ENV=test jest --config=jest.config.json",
+    "snyk-protect": "snyk protect",
     "start": "node server/server.js",
     "start:dev": "webpack serve --config webpack.dev.js",
-    "heroku-postbuild": "yarn run build:prod",
-    "snyk-protect": "snyk protect",
-    "prepare": "yarn run snyk-protect"
+    "test": "cross-env NODE_ENV=test jest --config=jest.config.json"
   },
   "dependencies": {
     "express": "4.17.1",
@@ -49,12 +52,13 @@
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.5",
     "enzyme-to-json": "3.6.1",
-    "eslint": "7.16.0",
+    "eslint": "7.17.0",
     "eslint-config-google": "0.14.0",
     "firebase-mock": "2.3.2",
     "git-branch-is": "4.0.0",
     "husky": "5.0.6",
     "jest": "26.6",
+    "markdownlint-cli": "0.26.0",
     "node-sass": "5.0.0",
     "raf": "3.4.1",
     "react-addons-shallow-compare": "15.6.3",
@@ -69,11 +73,5 @@
     "webpack-dev-server": "3.11.1",
     "webpack-merge": "5.7.3"
   },
-  "snyk": true,
-  "husky": {
-    "hooks": {
-      "pre-commit": "git-branch-is --not main",
-      "pre-push": "yarn run lint && yarn test"
-    }
-  }
+  "snyk": true
 }
