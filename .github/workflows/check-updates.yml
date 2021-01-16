@@ -38,6 +38,7 @@ jobs:
         if: ${{ steps.git-diff.outputs.count > 0 }}
         run: |
           git clone https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/awslabs/git-secrets.git
+          cd git-secrets
           make install
       - name: Increase version
         if: ${{ steps.git-diff.outputs.count > 0 }}
