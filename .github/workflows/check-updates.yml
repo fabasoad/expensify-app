@@ -34,6 +34,11 @@ jobs:
           changed_files=$(git status --porcelain --untracked-files=no | wc -l)
           echo '::set-output name=count::'$changed_files
         shell: bash
+      - name: Install git-secrets
+        if: ${{ steps.git-diff.outputs.count > 0 }}
+        run: |
+          git clone git@github.com:awslabs/git-secrets.git
+          make install
       - name: Increase version
         if: ${{ steps.git-diff.outputs.count > 0 }}
         run: yarn version --patch --no-git-tag-version
