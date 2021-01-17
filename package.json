@@ -1,6 +1,6 @@
 {
   "name": "expensify-app",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "main": "src/app.jsx",
   "author": "Yevhen Fabizhevskyi",
   "license": "MIT",
