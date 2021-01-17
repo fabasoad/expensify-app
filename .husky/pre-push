@@ -1,11 +1,5 @@
 #!/bin/sh
 . "$(dirname $0)/_/husky.sh"
 
-echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>> 2 <<<<<<<<<<<<<<<<<<<<<<<"
-env
-if [ "$HUSKY" = "0" ]; then
-  echo "HUSKY env variable is set to 0, skipping "$(basename "$0")" hook"
-else
-  yarn run lint
-  yarn test
-fi
+yarn run lint
+yarn test
