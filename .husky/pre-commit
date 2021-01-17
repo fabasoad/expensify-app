@@ -2,9 +2,5 @@
 . "$(dirname $0)/_/husky.sh"
 
 yarn git-branch-is --not main
-
-if [[ $SKIP_GIT_SECRETS != true ]]
-then
-  git secrets --pre_commit_hook -- "$@"
-  git secrets --scan
-fi
+git secrets --pre_commit_hook -- "$@"
+git secrets --scan
