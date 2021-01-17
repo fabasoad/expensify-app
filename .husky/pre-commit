@@ -1,6 +1,11 @@
 #!/bin/sh
 . "$(dirname $0)/_/husky.sh"
 
+if [ "$HUSKY" = "0" ]; then
+  echo "HUSKY env variable is set to 0, skipping "$(basename "$0")" hook"
+  exit 0
+fi
+
 yarn git-branch-is --not main
 git secrets --pre_commit_hook -- "$@"
 git secrets --scan
