@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 . "$(dirname $0)/_/husky.sh"
 
+env
 if [[ $SKIP_GIT_SECRETS != true ]]
 then
   git secrets --prepare_commit_msg_hook -- "$@"
