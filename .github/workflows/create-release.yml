@@ -4,7 +4,7 @@ name: Create release
 on:
   push:
     branches:
-      - main
+      - main1
 
 jobs:
   create_release:
