@@ -1,2 +1,7 @@
 #!/usr/bin/env bash
-git secrets --commit_msg_hook -- "$@"
+. "$(dirname $0)/_/husky.sh"
+
+if [[ $SKIP_GIT_SECRETS != true ]]
+then
+  git secrets --commit_msg_hook -- "$@"
+fi
