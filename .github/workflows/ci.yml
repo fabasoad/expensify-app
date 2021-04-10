@@ -4,8 +4,9 @@ name: CI
 on:
   push:
     branches:
-      - develop
+      - 'develop'
       - 'bugfix/**'
+      - 'bump/patch-*'
       - 'feature/**'
 
 jobs:
