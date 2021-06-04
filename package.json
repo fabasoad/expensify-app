@@ -23,7 +23,7 @@
   "dependencies": {
     "express": "4.17.1",
     "express-rate-limit": "5.2.6",
-    "firebase": "8.4.3",
+    "firebase": "8.5.0",
     "history": "5.0.0",
     "moment": "2.29.1",
     "normalize.css": "8.0.1",
