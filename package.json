@@ -38,7 +38,7 @@
     "uuid": "8.3.2"
   },
   "devDependencies": {
-    "@babel/cli": "7.15.4",
+    "@babel/cli": "7.15.7",
     "@babel/core": "7.15.5",
     "@babel/plugin-proposal-object-rest-spread": "7.14.7",
     "@babel/polyfill": "7.12.1",
