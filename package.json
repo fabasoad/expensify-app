@@ -66,7 +66,7 @@
     "react-test-renderer": "17.0.2",
     "redux-mock-store": "1.5.4",
     "sass-loader": "12.1.0",
-    "snyk": "1.696.0",
+    "snyk": "1.728.0",
     "style-loader": "3.2.1",
     "webpack": "5.52.0",
     "webpack-cli": "4.8.0",
