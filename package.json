@@ -1,6 +1,6 @@
 {
   "name": "expensify-app",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "main": "src/app.jsx",
   "author": "Yevhen Fabizhevskyi",
   "license": "MIT",
@@ -40,7 +40,7 @@
   "devDependencies": {
     "@babel/cli": "7.15.7",
     "@babel/core": "7.15.8",
-    "@babel/plugin-proposal-object-rest-spread": "7.14.7",
+    "@babel/plugin-proposal-object-rest-spread": "7.15.6",
     "@babel/polyfill": "7.12.1",
     "@babel/preset-env": "7.15.6",
     "@babel/preset-react": "7.14.5",
