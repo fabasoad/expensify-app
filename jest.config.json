@@ -6,9 +6,9 @@
   "coverageThreshold": {
     "global": {
       "branches": 90,
-      "functions": 77.32,
+      "functions": 77,
       "lines": 90.45,
-      "statements": 88.89
+      "statements": 88
     }
   },
   "setupFiles": [
